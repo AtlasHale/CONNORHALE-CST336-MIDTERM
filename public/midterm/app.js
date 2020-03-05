@@ -1,6 +1,6 @@
 let buildGallery = function(){
 	$("#books").empty();
-	var url = "https://openlibrary.org/api/books?bibkeys=ISBN:"+$("#isbn").val()+"&format=json&jscmd=data;
+	var url = "https://openlibrary.org/api/books?bibkeys=ISBN:"+$("#isbn").val()+"&format=json&jscmd=data";
 	$.ajax({
 		url: url,
 		type: "GET",
