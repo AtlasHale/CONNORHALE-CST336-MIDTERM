@@ -1,5 +1,4 @@
 let getBooks = function(){
-	$("#books").empty();
 	var url = "https://openlibrary.org/api/books?bibkeys=ISBN:"+$("#isbn").val()+"&format=json&jscmd=data";
 	$.ajax({
 		url: url,
@@ -9,11 +8,19 @@ let getBooks = function(){
 		    let imgLink = data["ISBN:"+$("#isbn").val()]["cover"]["large"];
 		    let title = data["ISBN:"+$("#isbn").val()].title;
 		    let author = data["ISBN:"+$("#isbn").val()]["authors"][0]["name"];
-		    console.log(title);
-		    console.log(author);
-		    $(".cover").html(`<img src=${imgLink} alt='cover art'>`);
-		    $("#title").html(title);
-		    $("#Author").html(author);
+		    let pubYear =  data["ISBN:"+$("#isbn").val()].publish_date;
+		    let pub =  data["ISBN:"+$("#isbn").val()]["publishers"][0]["name"];
+		    let isbn =  $("#isbn").val();
+		    let pages =  data["ISBN:"+$("#isbn").val()].number_of_pages;
+		    $('.cover').attr("src", `${imgLink}`)
+		    $("#title").html(`Title: ${title}`);
+		    $("#Author").html(`Author: ${author}`);
+		    $("#Publish-Year").html(`Publish: ${pubYear}`);
+		    $("#Publisher").html(`Publisher: ${pub}`);
+		    $("#ISBN").html(`ISBN: ${isbn}`);
+		    $("#Pages").html(`Pages: ${pages}`);
+		    
+		    
 		    console.log(data);
 		},
 		error: function(err){

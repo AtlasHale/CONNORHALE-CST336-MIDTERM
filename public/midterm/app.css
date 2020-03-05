@@ -4,6 +4,7 @@
 }
 
 .cover {
+    border-color:red;
     border: 5px;
     border-radius: 10px;
 }
