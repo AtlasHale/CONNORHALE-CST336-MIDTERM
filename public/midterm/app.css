@@ -3,18 +3,29 @@
 	background: #ecf0f1
 }
 
-.flex-container {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
+.cover {
+    border: 5px;
+    border-radius: 10px;
 }
+
+.info {
+    margin: 50px;
+    font-size: 25px;
+}
+
+
+/*.flex-container {*/
+/*	display: flex;*/
+/*	flex-wrap: wrap;*/
+/*	flex-direction: row;*/
+/*}*/
 
 /*width of flex items controls how many per row*/
-.flex-item {
-	width: 50%;
-	margin: 0px;
-}
+/*.flex-item {*/
+/*	width: 50%;*/
+/*	margin: 0px;*/
+/*}*/
 
-.flex-item > img {
-	width: 50%;
-}
+/*.flex-item > img {*/
+/*	width: 50%;*/
+/*}*/
