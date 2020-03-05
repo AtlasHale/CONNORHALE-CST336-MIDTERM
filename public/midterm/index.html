@@ -3,11 +3,8 @@
 <head>
 	<title>Open Library</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<!--External Stylesheet link-->
 	<link rel="stylesheet" type="text/css" href="app.css">
-	<!--Bootstrap CDN link-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	<!--JQuery CDN link-->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
@@ -15,8 +12,6 @@
 		<div class="jumbotron">
 			<h1>Open Library</h1>
 			<p>Please enter the ISBN of the book you'd like to retrieve</p>
-			<!--Form action directs you to the home page-->
-			<!--onsubmit links a function to an event-->
 			<form action="/midterm/index.html" method="post" onsubmit="getBooks(); return false;">
 				<div class="form-group row">
 					<label for="number-images" class="col-sm-2 col-form-label">ISBN</label>
@@ -30,11 +25,11 @@
 			</form>
 		</div>	
 		<div id="books">
-	        <div class="form-group row">
+	        <div class="row">
     			<div class="col-sm-3">
     			    <img class="cover" src="">
     			</div>
-    			<div class="col-sm-4">
+    			<div class="col-sm-6">
     				<div id="title" class="info"></div>
     				<div id="Author" class="info"></div>
     				<div id="Publish-Year" class="info"></div>
@@ -45,7 +40,6 @@
     		</div>
 		</div>
 	</div>
-	<!--External Javascript link-->
 	<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
