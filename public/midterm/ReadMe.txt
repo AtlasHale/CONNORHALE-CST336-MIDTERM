@@ -8,7 +8,7 @@ Question 2:
     a: 
         != checks if the value is not equal, !== checks if either the value or the type are not equal.
     b:
-        true
+        false
 Question 3:
     [1, 2]
     [1, 2]
