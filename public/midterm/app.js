@@ -1,4 +1,4 @@
-let buildGallery = function(){
+let getBooks = function(){
 	$("#books").empty();
 	var url = "https://openlibrary.org/api/books?bibkeys=ISBN:"+$("#isbn").val()+"&format=json&jscmd=data";
 	$.ajax({
@@ -6,10 +6,15 @@ let buildGallery = function(){
 		type: "GET",
 		dataType: "json",
 		success: function(data){
+		    let imgLink = data["ISBN:"+$("#isbn").val()]["cover"]["large"];
+		    let title = data["ISBN:"+$("#isbn").val()].title;
+		    let author = data["ISBN:"+$("#isbn").val()]["authors"][0]["name"];
+		    console.log(title);
+		    console.log(author);
+		    $(".cover").html(`<img src=${imgLink} alt='cover art'>`);
+		    $("#title").html(title);
+		    $("#Author").html(author);
 		    console.log(data);
-// 			data.message.forEach(function(src){
-// 				$("#images").append("<div class=\"img-thumbnail flex-item\"><img src=\""+src+"\"></div>");
-			});
 		},
 		error: function(err){
 			console.log(err);
@@ -20,6 +25,11 @@ let buildGallery = function(){
 
 
 /*JQ examples
+
+// 			data.message.forEach(function(src){
+// 				$("#images").append("<div class=\"img-thumbnail flex-item\"><img src=\""+src+"\"></div>");
+// 			});
+
 Get the value of some field using JQuery
 $("#q1").val().toLowerCase();
 Change html using jquery, index is passed into function here.
